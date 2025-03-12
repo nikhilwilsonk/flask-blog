@@ -37,7 +37,7 @@ class Post(db.Model):
     user_id=db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
 
     def __repr__(self):
-        return f"User('{self.title}', '{self.date_posted}')"
+        return f"Post('{self.title}', '{self.date_posted}')"
 
 posts=[
     {
@@ -97,5 +97,12 @@ if we import it from somewhere else, this will not run
 '''
 if __name__=='__main__':
     with app.app_context():
-        db.create_all()
+        db.create_all() #to create all the databases writte
+        # user_1=User(username='Corey', email='corey@gmail.com',password='xyz123')
+        # user_2=User(username='Nikhil', email='n@demo.com',password='password123')
+        # db.session.add(user_1)
+        # db.session.add(user_2)
+        # db.session.commit()
+        # User.query.all()
+
     app.run(debug=True) #now will debug
